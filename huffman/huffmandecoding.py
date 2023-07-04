@@ -21,7 +21,7 @@ class HuffmanDecoding:
         4. Se recorre la cadena de bits
         5. Si el bit es 0 entonces se mueve a la izquierda
         6. Si el bit es 1 entonces se mueve a la derecha
-        7. Si el nodo actual es una hoja entonces se agrega el caracter al decoded_string
+        7. Si el nodo actual es una hoja entonces se agrega el caracter al decoded_str
         8. Se retorna la cadena decodificada
         """
         if cadena == "":
