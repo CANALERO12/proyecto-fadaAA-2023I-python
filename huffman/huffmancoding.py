@@ -10,6 +10,8 @@ Integrantes y autores:
 Este modulo contiene la clase HuffmanCoding
 
 Clase que representa el algoritmo de Huffman
+
+ 
 """
 
 from huffman.huffmanbinarytree import HuffmanBinaryTree
