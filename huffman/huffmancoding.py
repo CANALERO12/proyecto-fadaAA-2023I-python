@@ -1,3 +1,4 @@
+
 """
 Proyecto final: FADA algoritmo Huffman
 
@@ -54,21 +55,23 @@ class HuffmanCoding:
                 # Ignorar el carácter y continuar con el siguiente
                 pass
         return encoded_string
+        
+    
     
 
-    def get_Tree(self):
+    def get_tree(self):
         """
         Metodo que retorna el arbol de Huffman
         """
         return self.tree
 
-    def get_Table(self):
+    def get_table(self):
         """
         Metodo que retorna la tabla de Huffman
         """
         return self.table
 
-    def get_Summary(self, cadena=None):
+    def get_summary(self, cadena=None):
         """
         Metodo que retorna un resumen de la compresion
         """
@@ -162,7 +165,7 @@ class HuffmanCoding:
             Si el nodo es hoja entonces se agrega el caracter y su codigo a la tabla de Huffman
             Si no es hoja entonces se llama recursivamente el metodo build_table con el hijo izquierdo y el codigo 0 y despues con el hijo derecho y el codigo 1.
             """
-            self.table[node.character] = code
+            self.table[node.key] = code
         self.build_table(node.left, code + "0")
         self.build_table(node.right, code + "1")
 

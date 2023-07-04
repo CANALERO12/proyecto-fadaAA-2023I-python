@@ -1,29 +1,17 @@
-"""
-Proyecto final: FADA algoritmo Huffman
-
-Integrantes y autores:
-    2067805 Andres Mauricio Arias Cortes
-    2067705 Santiago Marin Lozano
-    2067784 Maher Lopez Rodriguez
-
-
-Este modulo contiene la clase HuffmanDecoding
-
-Clase que representa el algoritmo de Huffman
-"""
-
 class HuffmanDecoding:
     """
-    Init de la clase HuffmanDecoding
+    Clase HuffmanDecoding
+    Esta clase se encarga de decodificar un texto en base a un árbol de Huffman
+    Autor: <Estudiantes>
+    Version: <1>
     """
-
     def __init__(self):
-        """
-        Constructor de la clase HuffmanDecoding
-        """
+        self.key = None
+        self.left = None
+        self.right = None
         self.tree = None
 
-    def decode(self, cadena):
+    def decode(self, cadena, tree):
         """
         Método que decodifica una cadena de texto utilizando codificación Huffman
         Esto se explica en el siguiente if con los siguientes pasos:
@@ -40,7 +28,7 @@ class HuffmanDecoding:
             return ""
 
         decoded_string = ""
-        current_node = self.tree
+        current_node = tree
 
         for bit in cadena:
             if bit == "0":
@@ -49,23 +37,7 @@ class HuffmanDecoding:
                 current_node = current_node.right
 
             if current_node.is_leaf():
-                decoded_string += current_node.character
-                current_node = self.tree
+                decoded_string += current_node.key
+                current_node = tree
 
         return decoded_string
-    
-    def write_decoded_data_to_file(self, filename, decoded_data):
-        """
-        Método que escribe los datos decodificados en un archivo.
-        """
-        with open(filename, "w") as file:
-            file.write(decoded_data)
-
-    def read_decoded_data_from_file(self, filename):
-        """
-        Método que lee los datos decodificados de un archivo.
-        """
-        with open(filename, "r") as file:
-            decoded_data = file.read()
-        return decoded_data
-
